@@ -27,4 +27,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/main_title" />
 
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:text="START YOUR ADVENTURE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        />
+
 </android.support.constraint.ConstraintLayout>
