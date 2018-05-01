@@ -9,6 +9,14 @@ public class Page {
     private Choice choice1;
     private Choice choice2;
 
+    // Constructor for the Page class.
+    public Page(int imageId, int textId, Choice choice1, Choice choice2) {
+        this.imageId = imageId;
+        this.textId = textId;
+        this.choice1 = choice1;
+        this.choice2 = choice2;
+    }
+
     public int getImageId() {
         return imageId;
     }
