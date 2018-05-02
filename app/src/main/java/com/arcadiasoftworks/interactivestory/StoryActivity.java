@@ -1,11 +1,11 @@
-package software.arcadia.interactivestory;
+package com.arcadiasoftworks.interactivestory;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import software.arcadia.interactivestory.model.Page;
+import com.arcadiasoftworks.interactivestory.model.Page;
 
 public class StoryActivity extends AppCompatActivity {
 
@@ -29,7 +29,7 @@ public class StoryActivity extends AppCompatActivity {
         // Initialize the pages array.
         pages = new Page[7];
 
-        
+
 
     }
 }

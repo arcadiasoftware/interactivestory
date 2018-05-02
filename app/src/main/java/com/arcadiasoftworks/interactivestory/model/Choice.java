@@ -1,4 +1,4 @@
-package software.arcadia.interactivestory.model;
+package com.arcadiasoftworks.interactivestory.model;
 
 /**
  * Created by Craig Booker on 05/01/2018
