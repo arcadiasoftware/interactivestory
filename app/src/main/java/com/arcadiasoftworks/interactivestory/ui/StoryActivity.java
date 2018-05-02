@@ -1,10 +1,11 @@
-package com.arcadiasoftworks.interactivestory;
+package com.arcadiasoftworks.interactivestory.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.arcadiasoftworks.interactivestory.R;
 import com.arcadiasoftworks.interactivestory.model.Page;
 
 public class StoryActivity extends AppCompatActivity {
