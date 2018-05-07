@@ -64,6 +64,14 @@ public class StoryActivity extends AppCompatActivity {
         pageText = String.format(pageText, name);
         storyTextView.setText(pageText);
 
+        if (page.isFinalPage()) {
+
+        } else {
+            loadButtons(page);
+        }
+    }
+
+    private void loadButtons(final Page page) {
         choice1Button.setText(page.getChoice1().getTextId());
         choice1Button.setOnClickListener(new View.OnClickListener() {
             @Override
