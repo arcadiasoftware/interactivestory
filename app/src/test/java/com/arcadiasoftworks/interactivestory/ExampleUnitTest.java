@@ -1,4 +1,4 @@
-package software.arcadia.interactivestory;
+package com.arcadiasoftworks.interactivestory;
 
 import org.junit.Test;
 

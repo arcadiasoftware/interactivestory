@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "software.arcadia.interactivestory"
+        applicationId "com.arcadiasoftworks.interactivestory"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
