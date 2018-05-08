@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.arcadiasoftworks.interactivestory.R;
-import com.arcadiasoftworks.interactivestory.ui.StoryActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = nameField.getText().toString();
-                //Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
-
                 startStory(name);
             }
         });

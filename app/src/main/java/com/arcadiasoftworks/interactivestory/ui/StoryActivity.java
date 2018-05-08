@@ -2,9 +2,9 @@ package com.arcadiasoftworks.interactivestory.ui;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +54,7 @@ public class StoryActivity extends AppCompatActivity {
 
     private void loadPage(int pageNumber) {
         pageStack.push(pageNumber);
+
         final Page page = story.getPage(pageNumber);
 
         Drawable image = ContextCompat.getDrawable(this, page.getImageId());
@@ -88,6 +89,7 @@ public class StoryActivity extends AppCompatActivity {
                 loadPage(nextPage);
             }
         });
+
         choice2Button.setVisibility(View.VISIBLE);
         choice2Button.setText(page.getChoice2().getTextId());
         choice2Button.setOnClickListener(new View.OnClickListener() {
