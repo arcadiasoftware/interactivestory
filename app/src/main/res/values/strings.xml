@@ -30,4 +30,5 @@
     <string name="title_image">Title Image</string>
     <string name="activity_title_image">Activity Title Image</string>
     <string name="story_image_content_description">Story page image</string>
+    <string name="play_again_button_text">PLAY AGAIN</string>
 </resources>

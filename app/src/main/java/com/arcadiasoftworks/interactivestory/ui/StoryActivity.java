@@ -15,6 +15,8 @@ import com.arcadiasoftworks.interactivestory.R;
 import com.arcadiasoftworks.interactivestory.model.Page;
 import com.arcadiasoftworks.interactivestory.model.Story;
 
+import java.util.Stack;
+
 public class StoryActivity extends AppCompatActivity {
 
     public static final String TAG = StoryActivity.class.getSimpleName();
@@ -25,8 +27,8 @@ public class StoryActivity extends AppCompatActivity {
     private TextView storyTextView;
     private Button choice1Button;
     private Button choice2Button;
-
-    private Page[] pages;
+    private Stack<Integer> pageStack = new Stack<Integer>();
+    //private Page[] pages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +50,10 @@ public class StoryActivity extends AppCompatActivity {
 
         story = new Story();
         loadPage(0);
-        // Initialize the pages array.
-        pages = new Page[7];
-
     }
 
     private void loadPage(int pageNumber) {
+        pageStack.push(pageNumber);
         final Page page = story.getPage(pageNumber);
 
         Drawable image = ContextCompat.getDrawable(this, page.getImageId());
@@ -65,13 +65,21 @@ public class StoryActivity extends AppCompatActivity {
         storyTextView.setText(pageText);
 
         if (page.isFinalPage()) {
-
+            choice1Button.setVisibility(View.INVISIBLE);
+            choice2Button.setText(R.string.play_again_button_text);
+            choice2Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    loadPage(0);
+                }
+            });
         } else {
             loadButtons(page);
         }
     }
 
     private void loadButtons(final Page page) {
+        choice1Button.setVisibility(View.VISIBLE);
         choice1Button.setText(page.getChoice1().getTextId());
         choice1Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +88,7 @@ public class StoryActivity extends AppCompatActivity {
                 loadPage(nextPage);
             }
         });
-
+        choice2Button.setVisibility(View.VISIBLE);
         choice2Button.setText(page.getChoice2().getTextId());
         choice2Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +97,17 @@ public class StoryActivity extends AppCompatActivity {
                 loadPage(nextPage);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        pageStack.pop();
+        if (pageStack.isEmpty()){
+            super.onBackPressed();
+        }
+        else {
+            loadPage(pageStack.pop());
+        }
     }
 }
 
